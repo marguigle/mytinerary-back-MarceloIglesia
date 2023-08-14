@@ -1,0 +1,24 @@
+{
+  "name": "mytinerary-back-marceloiglesia",
+  "version": "1.0.0",
+  "description": "mytinerary-backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marguigle/mytinerary-back-MarceloIglesia.git"
+  },
+  "author": "Marcelo Iglesia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marguigle/mytinerary-back-MarceloIglesia/issues"
+  },
+  "homepage": "https://github.com/marguigle/mytinerary-back-MarceloIglesia#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
