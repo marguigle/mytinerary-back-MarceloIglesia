@@ -1,13 +1,14 @@
+import "dotenv/config.js";
 import express from "express";
 import indexRouter from "./router/indexRouter.js";
-
+import cors from "cors";
+import "./config/database.js";
 const server = express();
-server.use("/api", indexRouter);
+server.use("/", indexRouter);
 
-server.listen(3010, () => {
-  server.get("/", (request, response, next) => {
-    response.send("Bienvenido a mi servidor en /");
-  });
-
-  console.log("El servisor esta corriendo en el puerto 3010");
+server.listen(process.env.PORT, () => {
+  console.log("El servisor esta corriendo en el puerto " + process.env.PORT);
+});
+server.get("/", (req, res, next) => {
+  res.send(console.log("bienvenido a mi servidor en /"));
 });

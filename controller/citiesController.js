@@ -1,22 +1,27 @@
-import cities from "../cities.js";
+import cityArray from "../cities.js";
 
-const citiesColtroller = {
+const citiesController = {
   getAllCities: (req, res, next) => {
-    response.json({
-      response: cities,
+    res.json({
+      res: cityArray,
       success: true,
       error: null,
     });
   },
+  /*   let { name, image, description } = req.params;
+
+    /*   const city = cityArray.find((city) => city.name == name);
+    console.log(name); */
+
   getOneCity: (req, res, next) => {
-    let { nombre, capital } = req.params;
-    const city = cities.find((city) => city.capital == capital);
-    response.json({
-      response: capital,
+    const { name } = req.params;
+    let city = cityArray.find((city) => city.name == name);
+    res.json({
+      res: city,
       success: true,
       error: null,
     });
   },
 };
 
-export default citiesColtroller;
+export default citiesController;
