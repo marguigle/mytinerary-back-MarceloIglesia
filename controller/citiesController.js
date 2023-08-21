@@ -1,10 +1,20 @@
-/* import cityArray from "../cityArray.js"; */
 import CityModel from "../models/CityModel.js";
 
 const citiesController = {
   getAllCities: async (req, res, next) => {
+    /*   const query = {};
+    if (req.query.name) {
+      query.name = {
+        name: { $regex: req.query.name, $options: "i" },
+      };
+    } */
+    const query = {};
+    if (req.query.name) {
+      query.name = { $regex: req.query.name, $options: "i" };
+    }
+
     try {
-      const allCities = await CityModel.find();
+      const allCities = await CityModel.find(query);
       res.json({
         response: allCities,
         succes: true,
@@ -20,13 +30,10 @@ const citiesController = {
     }
   },
   getOneCity: async (req, res, next) => {
-    console.log(req.params);
-    let { id } = req.params;
-    console.log(id);
     try {
-      const oneCities = await CityModel.findById(id);
+      const oneCity = await CityModel.findById(req.params.id);
       res.json({
-        response: oneCities,
+        response: oneCity,
         succes: true,
         error: null,
       });
@@ -40,13 +47,6 @@ const citiesController = {
     }
   },
 
-  /*  let ciudad = CityModel.find((ciudad) => ciudad.id == req. params.id);*/
-  /*     res.json({
-    response: ciudad, 
-      succes: true,
-      error: null,
-    });  */
-
   createOneCity: async (req, res, next) => {
     console.log(req.body);
     let city;
@@ -56,11 +56,6 @@ const citiesController = {
     try {
       city = await CityModel.create(req.body);
       console.log(city);
-      /*     /*   res.json({
-        res: city,
-        succes: true,
-        error: null, 
-      }); */
     } catch (error) {
       console.log(error);
       res.json({
