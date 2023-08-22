@@ -2,12 +2,6 @@ import CityModel from "../models/CityModel.js";
 
 const citiesController = {
   getAllCities: async (req, res, next) => {
-    /*   const query = {};
-    if (req.query.name) {
-      query.name = {
-        name: { $regex: req.query.name, $options: "i" },
-      };
-    } */
     const query = {};
     if (req.query.name) {
       query.name = { $regex: req.query.name, $options: "i" };
