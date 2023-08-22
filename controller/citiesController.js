@@ -59,5 +59,50 @@ const citiesController = {
       });
     }
   },
+
+  updateCity: async (req, res, next) => {
+    let city;
+    let error = null;
+    let succes = true;
+
+    try {
+      const { id } = req.params;
+      const city = await CityModel.findOneAndUpdate({ _id: id }, req.body, {
+        new: true,
+      });
+      res.json({
+        response: city,
+        error,
+        succes,
+      });
+    } catch (error) {
+      console.log(error);
+      res.json({
+        response: city,
+        succes: false,
+        error: error,
+      });
+    }
+  },
+  deleteCity: async (req, res, next) => {
+    const { id } = req.params;
+    try {
+      const city = await CityModel.findOneAndDelete({ _id: id }, req.body, {});
+      res.json({
+        response: city,
+        error,
+        succes,
+      });
+    } catch (error) {
+      console.log(error);
+      res.json({
+        response: city,
+        succes: false,
+        error: error,
+      });
+    }
+
+    res.send("ok");
+  },
 };
 export default citiesController;
