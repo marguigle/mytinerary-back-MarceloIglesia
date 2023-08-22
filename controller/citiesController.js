@@ -96,9 +96,7 @@ const citiesController = {
     } catch (error) {
       console.log(error);
       res.json({
-        response: city,
         succes: false,
-        error: error,
       });
     }
 
