@@ -99,8 +99,6 @@ const citiesController = {
         succes: false,
       });
     }
-
-    res.send("ok");
   },
 };
 export default citiesController;
