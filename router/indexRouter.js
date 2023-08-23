@@ -1,5 +1,6 @@
 import { Router } from "express";
 import cityRouter from "./cityRouter.js";
+
 const indexRouter = Router();
 
 indexRouter.get("/", (req, res, next) => {

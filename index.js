@@ -7,6 +7,8 @@ import cors from "cors";
 const server = express();
 server.use(express.json());
 server.use(cors());
+/* DATABASE_URL=mongodb+srv://marguigle:basededatos@cluster0.orvohzd.mongodb.net/cities
+PORT=3000 */
 
 server.get("/", (req, res, next) => {
   res.send("bienvenido a mi servidor en /");
