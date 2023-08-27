@@ -6,7 +6,8 @@ const schema = new Schema(
     name: { type: String, required: true },
     language: { type: String, required: true },
     description: { type: String },
-    // created_by: { type: Types.ObjectId, ref: "User" },
+    itineraries: { type: String },
+    //aca va a ir el array de itinerarios,
   },
   {
     timestamps: true,

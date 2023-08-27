@@ -7,6 +7,8 @@ const schema = new Schema(
     duration: { type: String, required: true },
     hashtags: { type: String, required: true },
     likes: { type: Number, required: false },
+    city: { type: Schema.Types.ObjectId, ref: "city", required: true },
+    //en city va el id de la ciudad porque un itinerario =>una ciudad
   },
   {
     timestamps: true,

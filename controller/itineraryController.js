@@ -1,5 +1,5 @@
 import ItineraryModel from "../models/ItineraryModel.js";
-
+import CityModel from "../models/CityModel.js";
 const itineraryController = {
   getAllItineraries: async (req, res, next) => {
     try {
@@ -39,10 +39,18 @@ const itineraryController = {
     let success = true;
 
     try {
-      itinerary = await ItineraryModel.create(req.body);
+      const city = await CityModel.find({ city: req.body.city });
+      const query = { ...req.body };
+      query.city = query._id;
+      itinerary = await ItineraryModel.create(query);
+      res.status(201).json({
+        response: itinerary,
+        success: true,
+        error: null,
+      });
     } catch (error) {
       console.log(error);
-      res.json({
+      res.status(500).json({
         response: null,
         success: false,
         error: error,
