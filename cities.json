@@ -1,37 +1,19 @@
 [
   {
-    "image": "../public/img/copenhagen-142711_1280.jpg",
-    "name": "Copenhagen Denmark",
-    "language": "Danish",
-    "description": "Copenhagen, Denmark's capital, captivates with its innovative design, vibrant cultural scene, and coastal charm. Bicycles everywhere, historic buildings, and Nordic cuisine stand out in this charming city"
-  },
-
-  {
-    "image": "../public/img/dubai-2650364_1280.jpg",
-    "name": "Dubai, United Arab Emirates",
-    "language": "Arab",
-    "description": "Dubai, located in the United Arab Emirates, dazzles with its futuristic architecture, luxury shopping, and desert landscapes. Skyscrapers, opulent malls, and diverse cultural experiences define this dynamic city."
-  },
-  {
     "image": "../public/img/london-123785_1280.jpg",
     "name": "London, England",
     "language": "English",
-    "description": "London, the UK's bustling capital, boasts iconic landmarks like Big Ben and the Tower of London. Rich history, global cuisine, and world-class museums make it a cultural melting pot."
-  },
-  {
-    "image": "../public/img/munich-1572429_1280.jpg",
-    "name": "Munich, Germany",
-    "language": "German",
-    "description": "Munich, situated in Germany, exudes Bavarian charm with its historic architecture and traditional beer gardens. Known for Oktoberfest and cultural heritage, it offers a blend of old-world and modern attractions."
+    "description": "London, the UK's bustling capital, boasts iconic landmarks like Big Ben and the Tower of London. Rich history, global cuisine, and world-class museums make it a cultural melting pot.",
+    "itineraries": []
   },
   {
     "image": "../public/img/paris-100277_1280.jpg",
     "name": "Paris, France ",
     "language": "French",
-    "description": "Paris, the capital of France, enchants with the Eiffel Tower's grandeur and the Louvre's artistry. Romantic ambiance, gourmet cuisine, and iconic landmarks define this city of love and culture."
+    "description": "Paris, the capital of France, enchants with the Eiffel Tower's grandeur and the Louvre's artistry. Romantic ambiance, gourmet cuisine, and iconic landmarks define this city of love and culture.",
+    "itineraries": []
   },
   {
-    "_id": "64e414d846aa76b71fde34e0",
     "image": "../public/img/imadrid.jpg",
     "name": "Madrid, Spain",
     "language": "Spanish",
@@ -39,58 +21,89 @@
     "itineraries": "Retiro Park"
   },
   {
-    "_id": "64e4151746aa76b71fde34e2",
-    "image": "../public/img/washington-dc-85531_1280.jpg",
-    "name": "Washington, USA",
-    "language": "English",
-    "description": "Washington, D.C., the U.S. capital, impresses with its monumental landmarks like the Washington Monument and the Lincoln Memorial. Historic significance, political power, and renowned museums define this city of American history and government."
-  },
-  {
     "image": "../public/img/portugal-4828134_1280.jpg",
     "name": "Lisbon, Portugal",
     "language": "Portuguese",
-    "description": "Lisbon, Portugal's capital, enchants with its colorful streets and stunning views from São Jorge Castle. Fado music, historic neighborhoods, and riverside charm make it a city of culture and beauty."
+    "description": "Lisbon, Portugal's capital, enchants with its colorful streets and stunning views from São Jorge Castle. Fado music, historic neighborhoods, and riverside charm make it a city of culture and beauty.",
+    "itineraries": []
   },
   {
     "image": "../public/img/barcelona.jpg",
     "name": "Barcelona, Spain",
     "language": "Spanish",
-    "description": "Barcelona, located in Spain, captivates with its iconic architecture including Gaudí's masterpieces like Sagrada Família. Beaches, vibrant neighborhoods, and Catalan culture define this city as a blend of art, history, and Mediterranean charm."
+    "description": "Barcelona, located in Spain, captivates with its iconic architecture including Gaudí's masterpieces like Sagrada Família. Beaches, vibrant neighborhoods, and Catalan culture define this city as a blend of art, history, and Mediterranean charm.",
+    "itineraries": []
   },
   {
     "image": "../public/img/venice-2364149_1280.jpg",
     "name": "Venice, Italy",
     "language": "Italian",
-    "description": "Venice, Italy's enchanting city of canals, bewitches with its romantic gondola rides and historic architecture. Floating beauty, intricate bridges, and artistic heritage make it a unique destination of elegance and allure."
+    "description": "Venice, Italy's enchanting city of canals, bewitches with its romantic gondola rides and historic architecture. Floating beauty, intricate bridges, and artistic heritage make it a unique destination of elegance and allure.",
+    "itineraries": []
   },
   {
     "image": "../public/img/valencia-82132_1280.jpg",
     "name": "Valencia, Spain",
     "language": "Spanish",
-    "description": "Valencia, a vibrant city in Spain, captivates with its futuristic City of Arts and Sciences and lively Mediterranean beaches. Culinary delights, historic charm, and cultural festivities define this dynamic and diverse Spanish gem."
+    "description": "Valencia, a vibrant city in Spain, captivates with its futuristic City of Arts and Sciences and lively Mediterranean beaches. Culinary delights, historic charm, and cultural festivities define this dynamic and diverse Spanish gem.",
+    "itineraries": []
+  },
+  {
+    "image": "../public/img/munich-1572429_1280.jpg",
+    "name": "Munich, Germany",
+    "language": "German",
+    "description": "Munich, situated in Germany, exudes Bavarian charm with its historic architecture and traditional beer gardens. Known for Oktoberfest and cultural heritage, it offers a blend of old-world and modern attractions.",
+    "itineraries": []
   },
   {
     "image": "../public/img/pexels-daniel-bendig-887848.jpg",
     "name": "New York",
     "language": "English",
-    "description": "New York City, the iconic metropolis in the USA, dazzles with its towering skyscrapers and Times Square's neon lights. The melting pot of cultures, Broadway shows, and Central Park showcase the city's energy and endless possibilities."
+    "description": "New York City, the iconic metropolis in the USA, dazzles with its towering skyscrapers and Times Square's neon lights. The melting pot of cultures, Broadway shows, and Central Park showcase the city's energy and endless possibilities.",
+    "itineraries": []
+  },
+  {
+    "_id": "64e4151746aa76b71fde34e2",
+    "image": "../public/img/washington-dc-85531_1280.jpg",
+    "name": "Washington, USA",
+    "language": "English",
+    "description": "Washington, D.C., the U.S. capital, impresses with its monumental landmarks like the Washington Monument and the Lincoln Memorial. Historic significance, political power, and renowned museums define this city of American history and government.",
+    "itineraries": []
   },
   {
     "image": "../public/img/pexels-martijn-vonk-7660103.jpg",
     "name": "Malaga, Spain",
     "language": "Spanish",
-    "description": "Málaga, a captivating city in Spain, enchants with its historic Alcazaba fortress and vibrant coastal atmosphere. Mediterranean beauty, Picasso's legacy, and lively markets make it a charming blend of culture and relaxation."
+    "description": "Málaga, a captivating city in Spain, enchants with its historic Alcazaba fortress and vibrant coastal atmosphere. Mediterranean beauty, Picasso's legacy, and lively markets make it a charming blend of culture and relaxation.",
+    "itineraries": []
   },
   {
     "image": "../public/img/pexels-barb-duggan-3633115.jpg",
     "name": "Bruges, Belgium ",
     "language": "Dutch (Flemish) and French",
-    "description": "Bruges, a picturesque city in Belgium, enchants with its medieval architecture and tranquil canals. Cobblestone streets, charming squares, and Belgian chocolates create a fairytale ambiance, making it a timeless and magical destination."
+    "description": "Bruges, a picturesque city in Belgium, enchants with its medieval architecture and tranquil canals. Cobblestone streets, charming squares, and Belgian chocolates create a fairytale ambiance, making it a timeless and magical destination.",
+    "itineraries": []
   },
   {
     "image": "../public/img/pexels-chait-goli-1797161 (1).jpg",
     "name": "Rome, Italy",
     "language": "Italian",
-    "description": "Rome, a timeless city, boasts ancient ruins like the Colosseum and Vatican treasures. Rich history, art, and captivating architecture define its allure."
+    "description": "Rome, a timeless city, boasts ancient ruins like the Colosseum and Vatican treasures. Rich history, art, and captivating architecture define its allure.",
+    "itineraries": []
+  },
+  {
+    "image": "../public/img/copenhagen-142711_1280.jpg",
+    "name": "Copenhagen Denmark",
+    "language": "Danish",
+    "description": "Copenhagen, Denmark's capital, captivates with its innovative design, vibrant cultural scene, and coastal charm. Bicycles everywhere, historic buildings, and Nordic cuisine stand out in this charming city",
+    "itineraries": []
+  },
+
+  {
+    "image": "../public/img/dubai-2650364_1280.jpg",
+    "name": "Dubai, United Arab Emirates",
+    "language": "Arab",
+    "description": "Dubai, located in the United Arab Emirates, dazzles with its futuristic architecture, luxury shopping, and desert landscapes. Skyscrapers, opulent malls, and diverse cultural experiences define this dynamic city.",
+    "itineraries": []
   }
 ]

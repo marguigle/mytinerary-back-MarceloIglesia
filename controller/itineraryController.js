@@ -4,7 +4,7 @@ const itineraryController = {
   getAllItineraries: async (req, res, next) => {
     try {
       const allItineraries = await ItineraryModel.find().populate(
-        "itineraryName"
+        "itineraries"
       );
       res.json({
         response: allItineraries,
@@ -37,10 +37,6 @@ const itineraryController = {
 
   createOneItinerary: async (req, res, next) => {
     try {
-      /*  console.log(req.body);  */
-      /*  res.json({ body: req.body }); */
-
-      /*   if (req.body.city) { */
       let cityQuery = {
         name: { $regex: req.body.city.trim(), $options: "i" },
       };
@@ -60,16 +56,7 @@ const itineraryController = {
         res.status(404).json({
           message: " not found",
         });
-        /*       let newCity = await CityModel.create((city = req.body.city));
-          let aux = { ...req.body };
-          aux.city = newCity._id;
-          const newItinerary = ItineraryModel.create(aux);
-
-          res.status(201).json(newItinerary); */
       }
-      /*    } else {
-        res.json({ error: "the city is required" });
-      } */
     } catch (error) {
       console.log(error);
       res.status(500).json({
