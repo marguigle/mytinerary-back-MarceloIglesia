@@ -9,7 +9,6 @@ const schema = new Schema(
     hashtags: { type: String, required: true },
     likes: { type: Number, required: false },
     city: { type: Types.ObjectId, ref: "City", required: true },
-    //en city va el id de la ciudad porque un itinerario =>una ciudad
   },
   {
     timestamps: true,
