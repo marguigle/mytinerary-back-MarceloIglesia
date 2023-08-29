@@ -4,7 +4,6 @@ const citiesController = {
   getAllCities: async (req, res, next) => {
     const query = {};
     if (req.query.name) {
-      /* query.name = { $regex: req.query.name, $options: "i" }; */
       query.name = { $regex: `^${req.query.name}`, $options: "i" };
     }
 
@@ -12,14 +11,14 @@ const citiesController = {
       const allCities = await CityModel.find(query);
       res.json({
         response: allCities,
-        succes: true,
+        success: true,
         error: null,
       });
     } catch (error) {
       console.log(error);
       res.json({
         response: null,
-        succes: false,
+        success: false,
         error: error,
       });
     }
@@ -29,42 +28,47 @@ const citiesController = {
       const oneCity = await CityModel.findById(req.params.id);
       res.json({
         response: oneCity,
-        succes: true,
+        success: true,
         error: null,
       });
     } catch (error) {
       console.log(error);
       res.json({
         response: null,
-        succes: false,
+        success: false,
         error: error,
       });
     }
   },
 
   createOneCity: async (req, res, next) => {
-    console.log(req.body);
     let city;
     let error = null;
-    let succes = true;
+    let success = true;
 
     try {
+      console.log(req.body);
+
       city = await CityModel.create(req.body);
-      console.log(city);
+
+      res.status(201).json({
+        response: city,
+        success,
+        error,
+      });
     } catch (error) {
       console.log(error);
-      res.json({
+      res.status(500).json({
         res: null,
-        succes: false,
+        success: false,
         error: error,
       });
     }
   },
 
   updateCity: async (req, res, next) => {
-    let city;
     let error = null;
-    let succes = true;
+    let success = true;
 
     try {
       const { id } = req.params;
@@ -74,13 +78,13 @@ const citiesController = {
       res.json({
         response: city,
         error,
-        succes,
+        success,
       });
     } catch (error) {
       console.log(error);
       res.json({
-        response: city,
-        succes: false,
+        response: error,
+        success: false,
         error: error,
       });
     }
@@ -91,13 +95,13 @@ const citiesController = {
       const city = await CityModel.findOneAndDelete({ _id: id }, req.body, {});
       res.json({
         response: city,
-        error,
-        succes,
+        error: null,
+        success: true,
       });
     } catch (error) {
       console.log(error);
       res.json({
-        succes: false,
+        success: false,
       });
     }
   },

@@ -1,18 +1,18 @@
-import { Schema, model, Types } from "mongoose";
+import mongoose, { Schema, model, Types } from "mongoose";
 
-const schema = new Schema(
+const citySchema = new Schema(
   {
-    image: { type: String, required: true },
     name: { type: String, required: true },
+    image: { type: String, required: true },
     language: { type: String, required: true },
     description: { type: String },
-    itineraries: { type: String },
-    //aca va a ir el array de itinerarios,
+    itineraries: [{ type: Types.ObjectId, ref: "Itinerary" }],
   },
+
   {
     timestamps: true,
   }
 );
 
-const CitiesModel = model("City", schema);
+const CitiesModel = model("City", citySchema);
 export default CitiesModel;

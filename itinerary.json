@@ -1,0 +1,20 @@
+[
+  {
+    "guideImage": "../public/img/guia-1.jpeg",
+    "price": "3",
+    "duration": "9:00 AM - 8:00 PM",
+    "hashtags": "#MadridAdventures #CityExploration #CulturalExperience",
+    "likes": "120",
+    "city": "{ type: Types.ObjectId, ref: 'city'(Madrid) }",
+    "itineraryName": "Prado Museum"
+  },
+  {
+    "guideImage": "../public/img/guia-2.jpeg",
+    "price": "3",
+    "duration": "9:00 AM - 8:00 PM",
+    "hashtags": "#MadridAdventures #CityExploration #CulturalExperience",
+    "likes": "120",
+    "city": "Madrid, Spain prueba",
+    "itineraryName": "Retiro Park"
+  }
+]

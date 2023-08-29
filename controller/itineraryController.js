@@ -3,7 +3,9 @@ import CityModel from "../models/CityModel.js";
 const itineraryController = {
   getAllItineraries: async (req, res, next) => {
     try {
-      const allItineraries = await ItineraryModel.find();
+      const allItineraries = await ItineraryModel.find().populate(
+        "itineraryName"
+      );
       res.json({
         response: allItineraries,
         success: true,
@@ -34,20 +36,40 @@ const itineraryController = {
   },
 
   createOneItinerary: async (req, res, next) => {
-    let itinerary;
-    let error = null;
-    let success = true;
-
     try {
-      const city = await CityModel.find({ city: req.body.city });
-      const query = { ...req.body };
-      query.city = query._id;
-      itinerary = await ItineraryModel.create(query);
-      res.status(201).json({
-        response: itinerary,
-        success: true,
-        error: null,
-      });
+      /*  console.log(req.body);  */
+      /*  res.json({ body: req.body }); */
+
+      /*   if (req.body.city) { */
+      let cityQuery = {
+        name: { $regex: req.body.city.trim(), $options: "i" },
+      };
+
+      let city = await CityModel.findOne(cityQuery);
+
+      if (city) {
+        let aux = { ...req.body };
+        aux.city = city._id;
+        const newItinerary = await ItineraryModel.create(aux);
+        await CityModel.findOneAndUpdate(
+          { _id: city._id },
+          { $push: { itineraries: newItinerary._id } }
+        );
+        res.status(201).json(newItinerary);
+      } else {
+        res.status(404).json({
+          message: " not found",
+        });
+        /*       let newCity = await CityModel.create((city = req.body.city));
+          let aux = { ...req.body };
+          aux.city = newCity._id;
+          const newItinerary = ItineraryModel.create(aux);
+
+          res.status(201).json(newItinerary); */
+      }
+      /*    } else {
+        res.json({ error: "the city is required" });
+      } */
     } catch (error) {
       console.log(error);
       res.status(500).json({
