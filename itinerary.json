@@ -1,20 +1,56 @@
 [
   {
+    "itinerary": "Prado Museum",
     "guideImage": "../public/img/guia-1.jpeg",
     "price": "3",
-    "duration": "9:00 AM - 8:00 PM",
+    "duration": "9:00 AM - 17:00 PM",
     "hashtags": "#MadridAdventures #CityExploration #CulturalExperience",
     "likes": "120",
-    "city": "{ type: Types.ObjectId, ref: 'city'(Madrid) }",
-    "itineraryName": "Prado Museum"
+    "city": "Madrid, Spain"
   },
   {
+    "itinerary": "Retiro Park",
     "guideImage": "../public/img/guia-2.jpeg",
     "price": "3",
-    "duration": "9:00 AM - 8:00 PM",
+    "duration": "9:00 AM - 14:00 PM",
     "hashtags": "#MadridAdventures #CityExploration #CulturalExperience",
     "likes": "120",
-    "city": "Madrid, Spain prueba",
-    "itineraryName": "Retiro Park"
+    "city": "Madrid, Spain"
+  },
+  {
+    "itinerary": "Tower of London",
+    "guideImage": "../public/img/guia-2.jpeg",
+    "price": "4",
+    "duration": "10:00 AM - 12:00 PM",
+    "hashtags": "#TowerOfLondonTreasures  #MedievalMarvel #CrownJewelsJourney #HistoryUnveiled",
+    "likes": "180",
+    "city": "London, England"
+  },
+  {
+    "itinerary": "British Museum",
+    "guideImage": "../public/img/guia-4.jpeg",
+    "price": "2",
+    "duration": "14:00 AM - 16:00 PM",
+    "hashtags": "#BritishMuseumAdventures #ArtifactsOfTheAges #ExploreBritishHistory #CulturalTrove",
+    "likes": "250",
+    "city": "London, England"
+  },
+  {
+    "itinerary": "Eiffel Tower",
+    "guideImage": "../public/img/guia-5.jpeg",
+    "price": "4",
+    "duration": "14:00 AM - 16:00 PM",
+    "hashtags": "#EiffelEnchantment #ParisianIcon #ElevateToEiffel #GlimpseOfTheTower",
+    "likes": "308",
+    "city": "Paris, France"
+  },
+  {
+    "itinerary": "Notre-Dame Cathedral",
+    "guideImage": "../public/img/guia-6.jpeg",
+    "price": "2",
+    "duration": "14:00 AM - 16:00 PM",
+    "hashtags": "#NotreDameSplendor #GothicElegance #SacredHeartOfParis #NotreDameRising",
+    "likes": "67",
+    "city": "Paris, France"
   }
 ]

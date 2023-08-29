@@ -3,9 +3,7 @@ import CityModel from "../models/CityModel.js";
 const itineraryController = {
   getAllItineraries: async (req, res, next) => {
     try {
-      const allItineraries = await ItineraryModel.find().populate(
-        "itineraries"
-      );
+      const allItineraries = await ItineraryModel.find().populate("itinerary");
       res.json({
         response: allItineraries,
         success: true,
