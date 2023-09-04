@@ -4,6 +4,7 @@ const schema = new Schema(
   {
     itinerary: { type: String, required: false },
     guideImage: { type: String, required: false },
+    guideName: { type: String, required: false },
     price: { type: Number, required: true },
     duration: { type: String, required: true },
     hashtags: { type: String, required: true },

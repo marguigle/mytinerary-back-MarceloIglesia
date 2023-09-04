@@ -8,9 +8,12 @@ const citiesController = {
     }
 
     try {
-      const allCities = await CityModel.find(query).populate("itineraries");
+      const allCities = await CityModel.find().populate({
+        path: "itineraries",
+      });
       res.json({
         response: allCities,
+
         success: true,
         error: null,
       });
