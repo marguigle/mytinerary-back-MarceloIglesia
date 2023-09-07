@@ -13,7 +13,6 @@ const citiesController = {
       });
       res.json({
         response: allCities,
-
         success: true,
         error: null,
       });
