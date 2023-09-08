@@ -7,7 +7,7 @@ const complexityOptions = {
   upperCase: 1,
   numeric: 1,
   symbol: 1,
-  requirementCount: 4,
+  requirementCount: 3,
 };
 
 export const signUpSchema = joi.object({
@@ -15,7 +15,7 @@ export const signUpSchema = joi.object({
   password: JoiPwd(complexityOptions).required().min(4).max(8),
   name: joi.string(),
   photo: joi.string().uri(),
-  birth_date: joi.date.max(Date.now()),
+  birth_date: joi.date,
   age: joi.number().min(18),
   phone: joi.number(),
   verified: joi.boolean,
