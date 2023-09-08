@@ -1,7 +1,7 @@
 import joi from "joi";
 import JoiPwd from "joi-password-complexity";
 const complexityOptions = {
-  min: 8,
+  min: 4,
   max: 26,
   lowerCase: 1,
   upperCase: 1,
