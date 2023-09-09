@@ -5,8 +5,8 @@ import validator from "../middleware/validator.js";
 
 const authRouter = Router();
 
-const { singUp } = authController;
+const { signUp } = authController;
 
-authRouter.post("/", validator(signUpSchema), singUp);
+authRouter.post("/", validator(signUpSchema), signUp);
 
 export default authRouter;
