@@ -1,9 +1,14 @@
 import { response } from "express";
 import User from "../models/user.js";
+import bcryptjs from "bcryptjs";
 
 const authController = {
   signUp: async (req, res, next) => {
     try {
+      const passwordHash = bcryptjs.hashSync(req.body.password, 10);
+      console.log(passwordHash);
+      req.body.password = passwordHash;
+
       const emailExiste = await User.findOne({ email: req.body.email });
 
       if (!emailExiste) {
