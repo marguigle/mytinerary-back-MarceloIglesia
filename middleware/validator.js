@@ -3,10 +3,11 @@ const validator = (Schema) => (req, res, next) => {
     /* req.body, */
 
     {
-      email: req.body.email,
-      password: req.body.password,
       name: req.body.name,
+      email: req.body.email,
       photo: req.body.photo,
+      password: req.body.password,
+      /* country: req.body.country, */
       birth_date: req.body.birth_date,
       age: req.body.age,
       phone: req.body.phone,

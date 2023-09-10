@@ -9,7 +9,6 @@ indexRouter.get("/", (req, res, next) => {
 });
 
 indexRouter.use("/cities", cityRouter);
-
 indexRouter.use("/itineraries", itineraryRouter);
 indexRouter.use("/auth", authRouter);
 
