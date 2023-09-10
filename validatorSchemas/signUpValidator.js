@@ -11,7 +11,10 @@ const complexityOptions = {
 };
 
 export const signUpSchema = joi.object({
-  email: joi.string().required(),
+  email: joi.string().required().messages({
+    "string.empty": "por favor ingrese su email",
+    "any.required": "el email es requerido",
+  }),
   password: JoiPwd(complexityOptions).required().min(4).max(8),
   name: joi.string(),
   photo: joi.string(),
