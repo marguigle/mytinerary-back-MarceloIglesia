@@ -12,6 +12,7 @@ authRouter.post("/signup", validator(signUpSchema), signUp);
 authRouter.post("/signin", validator(signUpSchema), signIn);
 authRouter.post(
   "/signin/token",
-  passport.authenticate("jwt", { session: false }, signInToken)
+  passport.authenticate("jwt", { session: false }),
+  signInToken
 );
 export default authRouter;

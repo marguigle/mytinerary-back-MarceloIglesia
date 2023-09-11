@@ -13,14 +13,15 @@ export const signUp = async (req, res, next) => {
     if (!userInDb) {
       const newUser = await User.create(req.body);
       const userResponse = {
-        name: userInDb.name,
-        email: userInDb.email,
-        photo: userInDb.photo,
-        id: userInDb._id,
-        password: userInDb.password,
-        birth_date: userInDb.birth_date,
-        age: userInDb.age,
-        phone: userInDb.phone,
+        id: newUser._id,
+        name: newUser.name,
+        email: newUser.email,
+        photo: newUser.photo,
+        age: newUser.age,
+        password: newUser.password,
+
+        phone: newUser.phone,
+        country: newUser.country,
       };
 
       const token = jwt.sign({ email: newUser.email }, "clavetoken");

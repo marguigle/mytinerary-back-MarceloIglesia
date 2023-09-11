@@ -21,5 +21,6 @@ export const signUpSchema = joi.object({
   birth_date: joi.date().max(Date.now()),
   age: joi.number().min(18),
   phone: joi.number(),
+  country: joi.string(),
   verified: joi.boolean,
 });

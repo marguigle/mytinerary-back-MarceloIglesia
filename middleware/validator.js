@@ -1,16 +1,13 @@
 const validator = (Schema) => (req, res, next) => {
   const validation = Schema.validate(
-    /* req.body, */
-
     {
       name: req.body.name,
       email: req.body.email,
       photo: req.body.photo,
-      password: req.body.password,
-      /* country: req.body.country, */
-      birth_date: req.body.birth_date,
       age: req.body.age,
+      password: req.body.password,
       phone: req.body.phone,
+      country: req.body.country,
     },
     { abortEarly: true }
   );
