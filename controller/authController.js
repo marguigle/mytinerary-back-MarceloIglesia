@@ -1,6 +1,6 @@
 import User from "../models/user.js";
 import bcryptjs from "bcryptjs";
-
+import jwt from "jsonwebtoken";
 export const signUp = async (req, res, next) => {
   try {
     const passwordHash = bcryptjs.hashSync(req.body.password, 10);
@@ -11,13 +11,21 @@ export const signUp = async (req, res, next) => {
 
     if (!emailExiste) {
       const newUser = await User.create(req.body);
+      const userResponse = {
+        email: userInDb.email,
+        name: userInDb.name,
+        photo: userInDb.photo,
+        id: userInDb._id,
+      };
+      const token = jwt.sign({ email: newUser.email }, "clavetoken");
       const esIgual = bcryptjs.compareSync(req.body.password, newUser.password);
       console.log(esIgual);
 
       return res.status(201).json({
         success: true,
-        userData: newUser,
+        userData: userResponse,
         message: "signUp successfully",
+        token: token,
       });
     }
     return res.status(400).json({
@@ -56,10 +64,11 @@ export const signIn = async (req, res, next) => {
       photo: userInDb.photo,
       id: userInDb._id,
     };
-
+    const token = jwt.sign({ email: userResponse.email }, "clavetoken");
     return res.status(200).json({
       success: true,
       user: userResponse,
+      token: token,
     });
   } catch (error) {
     res.json({
@@ -67,4 +76,16 @@ export const signIn = async (req, res, next) => {
       error: error,
     });
   }
+};
+
+export const signInToken = (req, res) => {
+  console.log(req);
+
+  const userResponse = {
+    email: req.user.email,
+    name: req.user.name,
+    photo: req.user.photo,
+    _id: req.user._id,
+  };
+  res.status(200).json({ success: true, user: userResponse });
 };
