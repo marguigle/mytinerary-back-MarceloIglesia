@@ -9,11 +9,11 @@ const options = {
 
 const fn = async (jwt_payload, done) => {
   try {
-    const user = await User.findOne({ email: jwt_payload.email });
-    if (!user) {
+    const userInDb = await User.findOne({ email: jwt_payload.email });
+    if (!userInDb) {
       return done(null, false);
     }
-    return done(null, user);
+    return done(null, userInDb);
   } catch (error) {
     return done(error, false);
   }

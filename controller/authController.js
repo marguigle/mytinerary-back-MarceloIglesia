@@ -1,22 +1,28 @@
 import User from "../models/user.js";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
+
 export const signUp = async (req, res, next) => {
   try {
+    const userInDb = await User.findOne({ email: req.body.email });
+
     const passwordHash = bcryptjs.hashSync(req.body.password, 10);
     console.log(passwordHash);
     req.body.password = passwordHash;
 
-    const emailExiste = await User.findOne({ email: req.body.email });
-
-    if (!emailExiste) {
+    if (!userInDb) {
       const newUser = await User.create(req.body);
       const userResponse = {
-        email: userInDb.email,
         name: userInDb.name,
+        email: userInDb.email,
         photo: userInDb.photo,
         id: userInDb._id,
+        password: userInDb.password,
+        birth_date: userInDb.birth_date,
+        age: userInDb.age,
+        phone: userInDb.phone,
       };
+
       const token = jwt.sign({ email: newUser.email }, "clavetoken");
       const esIgual = bcryptjs.compareSync(req.body.password, newUser.password);
       console.log(esIgual);
