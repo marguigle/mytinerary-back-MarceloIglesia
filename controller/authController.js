@@ -23,8 +23,8 @@ export const signUp = async (req, res, next) => {
         phone: newUser.phone,
         country: newUser.country,
       };
+      const token = jwt.sign({ email: newUser.email }, process.env.JWT_SECRET);
 
-      const token = jwt.sign({ email: newUser.email }, "clavetoken");
       const esIgual = bcryptjs.compareSync(req.body.password, newUser.password);
       console.log(esIgual);
 
@@ -71,7 +71,10 @@ export const signIn = async (req, res, next) => {
       photo: userInDb.photo,
       id: userInDb._id,
     };
-    const token = jwt.sign({ email: userResponse.email }, "clavetoken");
+    const token = jwt.sign(
+      { email: userResponse.email },
+      process.env.JWT_SECRET
+    );
     return res.status(200).json({
       success: true,
       user: userResponse,
