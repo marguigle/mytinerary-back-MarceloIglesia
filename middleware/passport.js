@@ -4,7 +4,8 @@ import User from "../models/user.js";
 
 const options = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: "clavetoken",
+
+  secretOrKey: process.env.JWT_SECRET,
 };
 
 const fn = async (jwt_payload, done) => {
