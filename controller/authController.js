@@ -1,16 +1,14 @@
-import User from "../models/User,js";
+import User from "../models/user.js"; // Corregido
 import bcryptjs from "bcryptjs";
 import dotenv from "dotenv";
-dotenv.config()
+dotenv.config();
 import jwt from "jsonwebtoken";
 
-
+// Tu código para las funciones signUp, signIn y signInToken
 export const signUp = async (req, res, next) => {
   try {
     const userInDb = await User.findOne({ email: req.body.email });
-    //console.log(userInDb);
     const passwordHash = bcryptjs.hashSync(req.body.password, 10);
-    console.log(passwordHash);
     req.body.password = passwordHash;
 
     if (!userInDb) {
@@ -22,14 +20,10 @@ export const signUp = async (req, res, next) => {
         photo: newUser.photo,
         age: newUser.age,
         password: newUser.password,
-
         phone: newUser.phone,
         country: newUser.country,
       };
       const token = jwt.sign({ email: newUser.email }, process.env.JWT_SECRET);
-
-      const esIgual = bcryptjs.compareSync(req.body.password, newUser.password);
-      console.log(esIgual);
 
       return res.status(201).json({
         success: true,
@@ -40,7 +34,7 @@ export const signUp = async (req, res, next) => {
     }
     return res.status(400).json({
       success: false,
-      message: "email already exist",
+      message: "email already exists",
     });
   } catch (error) {
     console.log(error);
@@ -50,7 +44,6 @@ export const signUp = async (req, res, next) => {
 export const signIn = async (req, res, next) => {
   try {
     const { email, password } = req.body;
-
     const userInDb = await User.findOne({ email });
 
     if (!userInDb) {
@@ -74,10 +67,7 @@ export const signIn = async (req, res, next) => {
       photo: userInDb.photo,
       id: userInDb._id,
     };
-    const token = jwt.sign(
-      { email: userResponse.email },
-      process.env.JWT_SECRET
-    );
+    const token = jwt.sign({ email: userResponse.email }, process.env.JWT_SECRET);
     return res.status(200).json({
       success: true,
       user: userResponse,
@@ -92,8 +82,6 @@ export const signIn = async (req, res, next) => {
 };
 
 export const signInToken = (req, res) => {
-  console.log(req);
-
   const userResponse = {
     email: req.user.email,
     name: req.user.name,
