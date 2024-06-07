@@ -67,7 +67,10 @@ export const signIn = async (req, res, next) => {
       photo: userInDb.photo,
       id: userInDb._id,
     };
-    const token = jwt.sign({ email: userResponse.email }, process.env.JWT_SECRET);
+    const token = jwt.sign(
+      { email: userResponse.email },
+      process.env.JWT_SECRET
+    );
     return res.status(200).json({
       success: true,
       user: userResponse,

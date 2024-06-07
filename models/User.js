@@ -1,18 +1,16 @@
 import { Schema, model } from "mongoose";
 
-const userSchema = Schema(
+const userSchema = new Schema(
   {
     name: { type: String },
     email: { type: String, required: true, unique: true },
     photo: {
       type: String,
-      default:
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AUser-avatar.svg&psig=AOvVaw1EnTkwJHtyLo47E1sOdY0J&ust=1694218116990000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNjvkIbdmYEDFQAAAAAdAAAAABAE",
+      default: "",
     },
     age: { type: Number },
     password: { type: String, required: true },
-
-    phone: { type: Number },
+    phone: { type: String }, // Cambiado a String para manejar mejor los números de teléfono
     country: { type: String },
     verified: { type: Boolean, default: false },
   },
@@ -21,5 +19,5 @@ const userSchema = Schema(
   }
 );
 
-const User = model("user", userSchema);
+const User = model("User", userSchema);
 export default User;
