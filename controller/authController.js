@@ -1,4 +1,4 @@
-import User from "../models/user.js"; // Corregido
+import User from "../models/User.js"; // Corregido
 import bcryptjs from "bcryptjs";
 import dotenv from "dotenv";
 dotenv.config();
