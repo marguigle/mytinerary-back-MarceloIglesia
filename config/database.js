@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const dbURL = process.env.DB_URL;
+const dbURL = process.env.DATABASE_URL;
 
 mongoose
   .connect(dbURL)
