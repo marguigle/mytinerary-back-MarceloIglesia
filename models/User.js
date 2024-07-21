@@ -6,7 +6,8 @@ const userSchema = new Schema(
     email: { type: String, required: true, unique: true },
     photo: {
       type: String,
-      default: "",
+      default:
+        "https://www.creativefabrica.com/wp-content/uploads/2021/09/09/User-avatar-profile-icon-Graphics-17068385-1-1-580x386.jpg",
     },
     age: { type: Number },
     password: { type: String, required: true },

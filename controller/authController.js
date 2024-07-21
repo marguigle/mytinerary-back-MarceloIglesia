@@ -4,11 +4,12 @@ import dotenv from "dotenv";
 dotenv.config();
 import jwt from "jsonwebtoken";
 
-// Tu código para las funciones signUp, signIn y signInToken
+
 export const signUp = async (req, res, next) => {
   try {
     const userInDb = await User.findOne({ email: req.body.email });
     const passwordHash = bcryptjs.hashSync(req.body.password, 10);
+  
     req.body.password = passwordHash;
 
     if (!userInDb) {
