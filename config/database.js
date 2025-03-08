@@ -7,5 +7,7 @@ const dbURL = process.env.DATABASE_URL;
 
 mongoose
   .connect(dbURL)
-  .then(() => console.log("Database connected"))
-  .catch((error) => console.error("Database connection failed:", error));
+  .then(() => console.log("Database connected OK"))
+  .catch((error) =>
+    console.error("Database connection failed: cagamos....!", error)
+  );

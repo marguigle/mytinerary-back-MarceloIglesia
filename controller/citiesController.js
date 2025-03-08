@@ -11,6 +11,7 @@ const citiesController = {
       const allCities = await CityModel.find().populate({
         path: "itineraries",
       });
+      // console.log("Datos obtenidos de la base de datos:", allCities);
       res.json({
         response: allCities,
         success: true,
