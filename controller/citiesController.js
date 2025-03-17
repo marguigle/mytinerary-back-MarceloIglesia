@@ -1,3 +1,4 @@
+import CitiesModel from "../models/CityModel.js";
 import CityModel from "../models/CityModel.js";
 
 const citiesController = {

@@ -4,12 +4,11 @@ import dotenv from "dotenv";
 dotenv.config();
 import jwt from "jsonwebtoken";
 
-
 export const signUp = async (req, res, next) => {
   try {
     const userInDb = await User.findOne({ email: req.body.email });
     const passwordHash = bcryptjs.hashSync(req.body.password, 10);
-  
+
     req.body.password = passwordHash;
 
     if (!userInDb) {
@@ -24,6 +23,7 @@ export const signUp = async (req, res, next) => {
         phone: newUser.phone,
         country: newUser.country,
       };
+      console.log(newUser);
       const token = jwt.sign({ email: newUser.email }, process.env.JWT_SECRET);
 
       return res.status(201).json({
